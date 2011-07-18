@@ -80,7 +80,7 @@ def getLog(repo, useUser):
 	try:
 		s = "person"
 		if useUser: s = "user"
-		args = ['log', '-v', '--template', '{author|%s}\n{date}\n{files}\n\n' % s]
+		args = ['log', '-v', '--no-merges', '--template', '{author|%s}\n{date}\n{files}\n\n' % s]
 		mercurial.dispatch.dispatch(args)
 	finally:
 		sys.stdout = sys.__stdout__
